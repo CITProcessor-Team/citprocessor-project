@@ -1,1 +1,7 @@
+
 rtl/*.sv @AkshayaSrelekaPS
+# All SystemVerilog files
+*.sv @SENTHOORKUMARAN
+
+# GitHub workflow files
+.github/workflows/* @gowthamk2006

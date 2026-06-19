@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>CI Pipeline Report</title>
+<style>
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+.pass {
+    background-color: lightgreen;
+}
+.fail {
+    background-color: salmon;
+}
+.skip {
+    background-color: lightgray;
+}
+</style>
+</head>
+<body>
+
+<h2>CI Pipeline Report</h2>
+
+<table>
+<tr>
+<th>Step</th>
+<th>Command</th>
+<th>Status</th>
+<th>Execution Time (ms)</th>
+</tr>
+<tr><td>Build</td><td>echo "Building project..."</td><td class="pass">PASS</td><td>8</td></tr>
+<tr><td>Lint</td><td>echo "Running linter..."</td><td class="pass">PASS</td><td>8</td></tr>
+<tr><td>Test</td><td>echo "Running tests..."</td><td class="pass">PASS</td><td>7</td></tr>
+<tr><td>Package</td><td>mkdir -p build</td><td class="pass">PASS</td><td>11</td></tr>
+<tr><td>Deploy</td><td>false</td><td class="fail">FAIL</td><td>7</td></tr>
+<tr><td>Cleanup</td><td>echo "Cleaning up..."</td><td class="skip">SKIPPED</td><td>-</td></tr>
+</table>
+
+</body>
+</html>
