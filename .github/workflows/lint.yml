@@ -1,0 +1,33 @@
+name: SV Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Custom Action
+        id: lint
+
+        uses: SENTHOORKUMARAN/sv-lint-action@v1
+
+        with:
+          files: |
+            docs/counter.sv
+            docs/mux.sv
+            docs/adder.sv
+            docs/register.sv
+            docs/decoder.sv
+            rtl/test.sv
+
+          severity: warning
+
+      - name: Show Results
+        run: |
+          echo '${{ steps.lint.outputs.result }}'
