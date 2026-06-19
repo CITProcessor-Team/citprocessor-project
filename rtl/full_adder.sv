@@ -1,3 +1,5 @@
+// Full Adder RTL Module
+
 module full_adder(
     input logic a,
     input logic b,
